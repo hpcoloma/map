@@ -71,3 +71,16 @@ const teamMembers = [
   }, {});
 
   console.log(experienceByProfession);
+
+  let nameByProfession = teamMembers.reduce((acc,curr) => {
+    //boundary of call back function
+    let key = curr.profession;
+    if (!acc[key]) {
+        acc[key] = curr.name;
+    }else {
+        acc[key] += curr.name;
+    }
+    return acc;
+  }, {});
+
+  console.log(nameByProfession,",");
